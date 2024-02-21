@@ -1,0 +1,111 @@
+---
+title: "Results"
+format: html
+editor: visual
+bibliography: references.bib
+---
+
+```{r}
+#| echo: false
+
+#load packages
+pacman::p_load(carData, 
+               dplyr, 
+               ggplot2, 
+               knitr, 
+               papaja)
+```
+
+## Results
+
+In this section, we will present our analysis results using data from a study on volunteering [@cowles1987]. This data is available in the [@carData] package.
+
+### Descriptive statistics and plots
+
+Number of Volunteers by binary sex variable:
+
+```{r}
+#| tbl-cap: Volunteering Counts by Sex
+#| tbl-cap-location: bottom
+#| label: tbl-volbysex
+
+Cowles %>% 
+  group_by(sex, volunteer) %>% 
+  tally() %>% 
+  group_by(sex) %>% 
+  mutate(Percent = n/sum(n)*100) %>% 
+  kable(digits=2)
+
+```
+
+Average and SD of personality scores by volunteering.
+
+```{r}
+#| tbl-cap: Average personality scores by volunteering
+#| tbl-cap-location: bottom
+#| label: tbl-scoresbyvol
+
+Cowles %>% 
+  group_by(volunteer) %>% 
+  summarize(Neuroticism_Avg = mean(neuroticism), 
+            Neuroticism_SD = sd(neuroticism),
+            Extraversion_Avg = mean(extraversion), 
+            Extraversion_SD = sd(extraversion)) %>% 
+  kable(digits=2)
+```
+
+Look at the distribution of data
+
+```{r}
+#|label: fig-extraversionbysexvol
+#|fig-cap: Distribution of extraversion scores by volunteer status and sex
+#|fig-cap-location: bottom
+
+Cowles %>% 
+  ggplot(aes(x=extraversion, fill=volunteer)) +
+  geom_density(alpha=.5) +
+  facet_wrap(~sex)+
+  theme_classic()
+
+```
+
+```{r}
+#|label: fig-neuroticismbysexvol
+#|fig-cap: Distribution of neuroticism scores by volunteer status and sex
+#|fig-cap-location: bottom
+
+Cowles %>% 
+  ggplot(aes(x=neuroticism, fill=volunteer)) +
+  geom_density(alpha=.5) +
+  facet_wrap(~sex)+
+  theme_classic()
+
+```
+
+### Do personality scores differ for those who do and do not volunteer?
+
+Independent t-tests were used to determine whether personality scores differed by whether participants volunteered or not.
+
+```{r}
+extrat <- apa_print(t.test(extraversion ~ volunteer, data=Cowles))
+neurot <- apa_print(t.test(neuroticism ~ volunteer, data=Cowles))
+```
+
+Extraversion differed between those who volunteered and did not `r extrat$full_result`. However, scores on neuroticism did not `r neurot$full_result`.
+
+### What is the relationship between extraversion and neuroticism in this sample?
+
+Do these scores correlate in this sample in the same way for volunteers and non-volunteers?
+
+```{r}
+#| label: fig-extneurscatter
+#| fig-cap: Relationship between extraversion and neuroticism in the sample. 
+#| fig-cap-location: bottom
+#| message: false
+
+Cowles %>% 
+  ggplot(aes(x=extraversion, y=neuroticism)) +
+  geom_point(aes(color=volunteer), position=position_jitter(width = .5, height=.5)) +
+  geom_smooth(method="lm", aes(color=volunteer), se=FALSE) +
+  theme_classic()
+```
