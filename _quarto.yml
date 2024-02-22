@@ -1,6 +1,11 @@
 project:
   type: book
 
+execute: 
+  echo: false
+  warning: false
+  message: false
+
 book:
   title: "LATIS R Quarto Workshop"
   author: "Norah Jones"
@@ -17,6 +22,9 @@ bibliography: references.bib
 format:
   pdf:
     documentclass: scrreprt
-
+  html: 
+    theme: cosmo
+  docx:
+    toc: true
 
 
