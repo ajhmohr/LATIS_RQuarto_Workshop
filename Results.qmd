@@ -18,7 +18,7 @@ pacman::p_load(carData,
 
 ## Results
 
-In this section, we will present our analysis results using data from a study on volunteering [@cowles1987]. This data is available in the [@carData] package.
+In this section, we will present our analysis results using data from a study on volunteering [@cowles1987]. This data is available in the car data package [@carData].
 
 ### Descriptive statistics and plots
 
@@ -57,9 +57,9 @@ Cowles %>%
 Look at the distribution of data
 
 ```{r}
-#|label: fig-extraversionbysexvol
-#|fig-cap: Distribution of extraversion scores by volunteer status and sex
-#|fig-cap-location: bottom
+#| label: fig-extraversionbysexvol
+#| fig-cap: Distribution of extraversion scores by volunteer status and sex.
+#| fig-cap-location: bottom
 
 Cowles %>% 
   ggplot(aes(x=extraversion, fill=volunteer)) +
@@ -70,9 +70,9 @@ Cowles %>%
 ```
 
 ```{r}
-#|label: fig-neuroticismbysexvol
-#|fig-cap: Distribution of neuroticism scores by volunteer status and sex
-#|fig-cap-location: bottom
+#| label: fig-neuroticismbysexvol
+#| fig-cap: Distribution of neuroticism scores by volunteer status and sex.
+#| fig-cap-location: bottom
 
 Cowles %>% 
   ggplot(aes(x=neuroticism, fill=volunteer)) +
@@ -119,4 +119,4 @@ lmtest$table %>%
   kable(col.names = c("Predictor", "$b$", "95\\% CI", "$t$", "$\\mathit{df}$", "$p$"))
 ```
 
-## References
+## 
