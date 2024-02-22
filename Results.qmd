@@ -1,6 +1,6 @@
 ---
 title: "Results"
-format: html
+format: pdf
 editor: visual
 bibliography: references.bib
 ---
@@ -91,7 +91,7 @@ extrat <- apa_print(t.test(extraversion ~ volunteer, data=Cowles))
 neurot <- apa_print(t.test(neuroticism ~ volunteer, data=Cowles))
 ```
 
-Extraversion differed between those who volunteered and did not `r extrat$full_result`. However, scores on neuroticism did not `r neurot$full_result`.
+Extraversion differed between those who volunteered (`r extrat$full_result`). However, scores on neuroticism did not differ between groups (`r neurot$full_result`).
 
 ### What is the relationship between extraversion and neuroticism in this sample?
 
@@ -109,3 +109,14 @@ Cowles %>%
   geom_smooth(method="lm", aes(color=volunteer), se=FALSE) +
   theme_classic()
 ```
+
+```{r}
+#| results: asis
+
+lmtest <- apa_print(lm(neuroticism ~ extraversion * volunteer, data = Cowles))
+
+lmtest$table %>% 
+  kable(col.names = c("Predictor", "$b$", "95\\% CI", "$t$", "$\\mathit{df}$", "$p$"))
+```
+
+## References
