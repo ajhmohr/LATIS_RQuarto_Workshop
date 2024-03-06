@@ -22,11 +22,11 @@ In this section, we will present our analysis results using data from a study on
 
 ### Descriptive statistics and plots
 
-Number of Volunteers by binary sex variable:
+First, we will look at descriptive statistics and visualizations of the data.
 
 ```{r}
 #| tbl-cap: Volunteering Counts by Sex
-#| tbl-cap-location: bottom
+#| tbl-cap-location: top
 #| label: tbl-volbysex
 
 Cowles %>% 
@@ -38,12 +38,13 @@ Cowles %>%
 
 ```
 
-Average and SD of personality scores by volunteering.
+Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut varius id est vel lacinia. Etiam fermentum lorem tellus, et cursus orci pharetra vel. Duis non viverra quam. Sed dignissim sem a mi ultricies dignissim. Nulla mattis lorem sit amet enim convallis porta. Duis dui ligula, ornare ut ex non, aliquet mattis libero. Ut congue ipsum cursus est euismod rutrum. Curabitur porttitor nibh sit amet urna ornare lobortis. Nullam commodo, enim sit amet feugiat volutpat, tortor est viverra leo, et auctor leo lorem eu purus. Pellentesque tempor diam at justo sollicitudin condimentum. Etiam eget sagittis sem. Vivamus nec vulputate arcu, et iaculis urna. Nam lacus velit, posuere sit amet facilisis in, mattis eleifend tellus.
 
 ```{r}
-#| tbl-cap: Average personality scores by volunteering
-#| tbl-cap-location: bottom
 #| label: tbl-scoresbyvol
+#| tbl-cap: Average personality scores by volunteering
+#| tbl-cap-location: top
+
 
 Cowles %>% 
   group_by(volunteer) %>% 
@@ -54,12 +55,12 @@ Cowles %>%
   kable(digits=2)
 ```
 
-Look at the distribution of data
+Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut varius id est vel lacinia. Etiam fermentum lorem tellus, et cursus orci pharetra vel. Duis non viverra quam. Sed dignissim sem a mi ultricies dignissim. Nulla mattis lorem sit amet enim convallis porta. Duis dui ligula, ornare ut ex non, aliquet mattis libero. Ut congue ipsum cursus est euismod rutrum. Curabitur porttitor nibh sit amet urna ornare lobortis. Nullam commodo, enim sit amet feugiat volutpat, tortor est viverra leo, et auctor leo lorem eu purus. Pellentesque tempor diam at justo sollicitudin condimentum. Etiam eget sagittis sem. Vivamus nec vulputate arcu, et iaculis urna. Nam lacus velit, posuere sit amet facilisis in, mattis eleifend tellus.
 
 ```{r}
 #| label: fig-extraversionbysexvol
 #| fig-cap: Distribution of extraversion scores by volunteer status and sex.
-#| fig-cap-location: bottom
+#| fig-cap-location: top
 
 Cowles %>% 
   ggplot(aes(x=extraversion, fill=volunteer)) +
@@ -72,7 +73,7 @@ Cowles %>%
 ```{r}
 #| label: fig-neuroticismbysexvol
 #| fig-cap: Distribution of neuroticism scores by volunteer status and sex.
-#| fig-cap-location: bottom
+#| fig-cap-location: top
 
 Cowles %>% 
   ggplot(aes(x=neuroticism, fill=volunteer)) +
@@ -91,7 +92,9 @@ extrat <- apa_print(t.test(extraversion ~ volunteer, data=Cowles))
 neurot <- apa_print(t.test(neuroticism ~ volunteer, data=Cowles))
 ```
 
-Extraversion differed between those who volunteered (`r extrat$full_result`). However, scores on neuroticism did not differ between groups (`r neurot$full_result`).
+Extraversion differed between those who volunteered (`r extrat$full_result`). As shown in @tbl-scoresbyvol, volunteers were more extraverted on average than those who did not volunteer.
+
+However, scores on neuroticism did not differ between groups (`r neurot$full_result`).
 
 ### What is the relationship between extraversion and neuroticism in this sample?
 
@@ -119,4 +122,10 @@ lmtest$table %>%
   kable(col.names = c("Predictor", "$b$", "95\\% CI", "$t$", "$\\mathit{df}$", "$p$"))
 ```
 
-## 
+## Conclusions
+
+Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut varius id est vel lacinia. Etiam fermentum lorem tellus, et cursus orci pharetra vel. Duis non viverra quam. Sed dignissim sem a mi ultricies dignissim. Nulla mattis lorem sit amet enim convallis porta. Duis dui ligula, ornare ut ex non, aliquet mattis libero. Ut congue ipsum cursus est euismod rutrum. Curabitur porttitor nibh sit amet urna ornare lobortis. Nullam commodo, enim sit amet feugiat volutpat, tortor est viverra leo, et auctor leo lorem eu purus. Pellentesque tempor diam at justo sollicitudin condimentum. Etiam eget sagittis sem. Vivamus nec vulputate arcu, et iaculis urna. Nam lacus velit, posuere sit amet facilisis in, mattis eleifend tellus.
+
+Maecenas et eros dolor. Proin placerat dolor eu rutrum euismod. Sed eu pharetra eros. Suspendisse in erat a magna varius rutrum eu eget dolor. Sed efficitur, orci eu ultricies varius, libero dolor fermentum lectus, ac pulvinar magna urna eget leo. Praesent iaculis nisi magna, quis ultrices tellus pulvinar ac. Morbi vitae tortor efficitur, malesuada est nec, efficitur nunc. Nulla blandit elit mauris, ac suscipit erat dignissim quis. Nunc luctus quam et lorem ultricies, sit amet auctor mauris mattis. Maecenas varius nisl et eros eleifend, ac luctus odio tempus. Suspendisse vitae ligula vel ex maximus ultricies malesuada eget velit. Interdum et malesuada fames ac ante ipsum primis in faucibus. Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+
+Cras sed elit at purus dictum faucibus. Suspendisse maximus euismod arcu sed auctor. Donec vitae ornare elit, volutpat ultricies erat. Praesent molestie vestibulum justo in semper. Maecenas dignissim egestas iaculis. Aenean tincidunt odio nisl, ac efficitur ante ultrices quis. Donec commodo varius enim, egestas accumsan metus.

@@ -13,7 +13,7 @@ book:
   chapters:
     - index.qmd
     - intro.qmd
-    - Results.qmd
+    - results.qmd
     - summary.qmd
     - references.qmd
 
