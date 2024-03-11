@@ -8,12 +8,21 @@ execute:
 
 book:
   title: "LATIS R Quarto Workshop"
-  author: "Norah Jones"
+  #author: "Norah Jones"
+  author:
+    - name: "Norah Jones"
+      email: "norajones@yesthatsher.net"
+      affiliation: 
+        - name: "University of Minnesota"
+          address: "1234 Main St, Minneapolis, MN 55455"
+      orcid: "0000-0002-1825-0097"
+      metadata:
+        advisor: "Dr. Joan Smith"
   date: "2/22/2024"
   chapters:
     - index.qmd
     - intro.qmd
-    - results.qmd
+    - Results.qmd
     - summary.qmd
     - references.qmd
 
@@ -22,6 +31,16 @@ bibliography: references.bib
 format:
   pdf:
     documentclass: scrreprt
+    # https://quarto.org/docs/journals/templates.html
+    template-partials:
+      - templates/before-body.tex
+      - templates/_dynamic_titlepage.tex
+      - templates/_static_titlepage.tex
+    #include-before-body: 
+    #  - file: "tex/copyright.tex"
+    #  - file: "tex/acknowledgements.tex"
+    #  - file: "tex/dedication.tex"
+    #  - file: "tex/abstract.tex"
   html: 
     theme: cosmo
   docx:

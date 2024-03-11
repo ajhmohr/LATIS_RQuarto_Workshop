@@ -1,0 +1,12 @@
+$if(has-frontmatter)$
+    \begin{frontmatter}
+    \begin{titlepage}
+    $_dynamic_titlepage.tex()$
+
+$else$
+    \begin{titlepage}
+    $_dynamic_titlepage.tex()$
+
+    \end{titlepage}
+
+$endif$
