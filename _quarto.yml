@@ -36,11 +36,16 @@ format:
       - templates/before-body.tex
       - templates/_dynamic_titlepage.tex
       - templates/_static_titlepage.tex
+      - templates/copyright.tex
+      - templates/acknowledgement.tex
+      - templates/dedication.tex
+      - templates/abstract.tex
+
     #include-before-body: 
-    #  - file: "tex/copyright.tex"
-    #  - file: "tex/acknowledgements.tex"
-    #  - file: "tex/dedication.tex"
-    #  - file: "tex/abstract.tex"
+    #  - file: "templates/copyright.tex"
+    #  - file: "templates/acknowledgements.tex"
+    #  - file: "templates/dedication.tex"
+    #  - file: "templates/abstract.tex"
   html: 
     theme: cosmo
   docx:
