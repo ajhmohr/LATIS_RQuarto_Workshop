@@ -1,3 +1,5 @@
+\pagenumbering{arabic}
+
 # Preface {.unnumbered}
 
 This is a Quarto book.

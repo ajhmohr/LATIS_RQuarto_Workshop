@@ -4,3 +4,6 @@
 .Ruserdata
 
 /.quarto/
+_book/*
+!_book/LATIS-R-Quarto-Workshop.docx
+!_book/LATIS-R-Quarto-Workshop.pdf

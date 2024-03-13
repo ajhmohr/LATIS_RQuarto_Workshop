@@ -16,8 +16,6 @@ book:
         - name: "University of Minnesota"
           address: "1234 Main St, Minneapolis, MN 55455"
       orcid: "0000-0002-1825-0097"
-      metadata:
-        advisor: "Dr. Joan Smith"
   date: "2/22/2024"
   chapters:
     - index.qmd
@@ -32,14 +30,23 @@ format:
   pdf:
     documentclass: scrreprt
     # https://quarto.org/docs/journals/templates.html
+    margin-left: "1.5in"
+    margin-right: "1in"
+    margin-top: "1in"
+    margin-bottom: "1.5in"
+    linestretch: 1.5
     template-partials:
       - templates/before-body.tex
       - templates/_dynamic_titlepage.tex
-      - templates/_static_titlepage.tex
       - templates/copyright.tex
-      - templates/acknowledgement.tex
-      - templates/dedication.tex
-      - templates/abstract.tex
+    include-before-body:
+      - file: "templates/acknowledgement.tex"
+      - file: "templates/dedication.tex"
+      - file: "templates/abstract.tex"
+    toc: true
+    toc-depth: 2
+    lof: true
+    lot: true
 
     #include-before-body: 
     #  - file: "templates/copyright.tex"

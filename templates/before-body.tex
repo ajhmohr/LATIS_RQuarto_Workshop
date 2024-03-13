@@ -2,15 +2,15 @@ $if(has-frontmatter)$
     \begin{titlepage}
     \begin{frontmatter}
     $_dynamic_titlepage.tex()$
+    \pagebreak
+    $copyright.tex()$
+    \end{frontmatter}
 
 $else$
     \begin{titlepage}
     $_dynamic_titlepage.tex()$
+    \pagebreak
     $copyright.tex()$
-    $acknowledgement.tex()$
-    $dedication.tex()$
-    $abstract.tex()$
-
     \end{titlepage}
 
 $endif$
