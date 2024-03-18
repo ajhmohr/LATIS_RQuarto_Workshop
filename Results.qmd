@@ -19,7 +19,7 @@ pacman::p_load(carData,
 
 ## Results
 
-In this section, we will present our analysis results using data from a study on volunteering [@cowles1987]. This data is available in the car data package [@carData].
+In this section, we will present our analysis results using data from a study on volunteering. This data is available in the car data package.
 
 ### Descriptive statistics and plots
 
