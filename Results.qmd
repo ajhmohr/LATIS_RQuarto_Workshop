@@ -7,6 +7,7 @@ bibliography: references.bib
 
 ```{r}
 #| echo: false
+#| message: false
 
 #load packages
 pacman::p_load(carData, 
