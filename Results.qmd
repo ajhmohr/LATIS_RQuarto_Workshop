@@ -26,9 +26,6 @@ In this section, we will present our analysis results using data from a study on
 First, we will look at descriptive statistics and visualizations of the data.
 
 ```{r}
-#| tbl-cap: Volunteering Counts by Sex
-#| tbl-cap-location: top
-#| label: tbl-volbysex
 
 Cowles %>% 
   group_by(sex, volunteer) %>% 
@@ -42,7 +39,6 @@ Cowles %>%
 Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut varius id est vel lacinia. Etiam fermentum lorem tellus, et cursus orci pharetra vel. Duis non viverra quam. Sed dignissim sem a mi ultricies dignissim. Nulla mattis lorem sit amet enim convallis porta. Duis dui ligula, ornare ut ex non, aliquet mattis libero. Ut congue ipsum cursus est euismod rutrum. Curabitur porttitor nibh sit amet urna ornare lobortis. Nullam commodo, enim sit amet feugiat volutpat, tortor est viverra leo, et auctor leo lorem eu purus. Pellentesque tempor diam at justo sollicitudin condimentum. Etiam eget sagittis sem. Vivamus nec vulputate arcu, et iaculis urna. Nam lacus velit, posuere sit amet facilisis in, mattis eleifend tellus.
 
 ```{r}
-#| label: tbl-scoresbyvol
 #| tbl-cap: Average personality scores by volunteering
 #| tbl-cap-location: top
 
@@ -59,10 +55,6 @@ Cowles %>%
 Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut varius id est vel lacinia. Etiam fermentum lorem tellus, et cursus orci pharetra vel. Duis non viverra quam. Sed dignissim sem a mi ultricies dignissim. Nulla mattis lorem sit amet enim convallis porta. Duis dui ligula, ornare ut ex non, aliquet mattis libero. Ut congue ipsum cursus est euismod rutrum. Curabitur porttitor nibh sit amet urna ornare lobortis. Nullam commodo, enim sit amet feugiat volutpat, tortor est viverra leo, et auctor leo lorem eu purus. Pellentesque tempor diam at justo sollicitudin condimentum. Etiam eget sagittis sem. Vivamus nec vulputate arcu, et iaculis urna. Nam lacus velit, posuere sit amet facilisis in, mattis eleifend tellus.
 
 ```{r}
-#| label: fig-extraversionbysexvol
-#| fig-cap: Distribution of extraversion scores by volunteer status and sex.
-#| fig-cap-location: top
-
 Cowles %>% 
   ggplot(aes(x=extraversion, fill=volunteer)) +
   geom_density(alpha=.5) +
@@ -89,13 +81,13 @@ Cowles %>%
 Independent t-tests were used to determine whether personality scores differed by whether participants volunteered or not.
 
 ```{r}
-extrat <- apa_print(t.test(extraversion ~ volunteer, data=Cowles))
-neurot <- apa_print(t.test(neuroticism ~ volunteer, data=Cowles))
+extrat <-t.test(extraversion ~ volunteer, data=Cowles)
+neurot <- t.test(neuroticism ~ volunteer, data=Cowles)
 ```
 
-Extraversion differed between those who volunteered (`r extrat$full_result`). As shown in @tbl-scoresbyvol, volunteers were more extraverted on average than those who did not volunteer.
+Extraversion differed between those who volunteered. As shown in the table above, volunteers were more extraverted on average than those who did not volunteer.
 
-However, scores on neuroticism did not differ between groups (`r neurot$full_result`).
+However, scores on neuroticism did not differ between groups.
 
 ### What is the relationship between extraversion and neuroticism in this sample?
 
@@ -105,7 +97,6 @@ Do these scores correlate in this sample in the same way for volunteers and non-
 #| label: fig-extneurscatter
 #| fig-cap: Relationship between extraversion and neuroticism in the sample. 
 #| fig-cap-location: bottom
-#| message: false
 
 Cowles %>% 
   ggplot(aes(x=extraversion, y=neuroticism)) +
@@ -117,10 +108,9 @@ Cowles %>%
 ```{r}
 #| results: asis
 
-lmtest <- apa_print(lm(neuroticism ~ extraversion * volunteer, data = Cowles))
+lmtest <- lm(neuroticism ~ extraversion * volunteer, data = Cowles)
 
-lmtest$table %>% 
-  kable(col.names = c("Predictor", "$b$", "95\\% CI", "$t$", "$\\mathit{df}$", "$p$"))
+summary(lmtest)
 ```
 
 ## Conclusions
