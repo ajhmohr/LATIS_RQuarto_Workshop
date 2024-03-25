@@ -13,8 +13,7 @@ bibliography: references.bib
 pacman::p_load(carData, 
                dplyr, 
                ggplot2, 
-               knitr, 
-               papaja)
+               knitr)
 ```
 
 ## Results
