@@ -22,6 +22,7 @@ book:
     - intro.qmd
     - Results.qmd
     - summary.qmd
+    - discussion.qmd
     - references.qmd
 
 bibliography: references.bib
