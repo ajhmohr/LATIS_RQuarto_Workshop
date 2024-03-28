@@ -19,7 +19,7 @@ book:
   date: "2/22/2024"
   chapters:
     - index.qmd
-    - intro.qmd
+    #- intro.qmd
     - Results.qmd
     - summary.qmd
     - discussion.qmd
@@ -49,14 +49,8 @@ format:
     lof: true
     lot: true
     fontfamily: times
-
-    #include-before-body: 
-    #  - file: "templates/copyright.tex"
-    #  - file: "templates/acknowledgements.tex"
-    #  - file: "templates/dedication.tex"
-    #  - file: "templates/abstract.tex"
-  html: 
-    theme: cosmo
+  #html: 
+  #  theme: cosmo
   docx:
     toc: true
 
