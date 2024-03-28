@@ -16,7 +16,7 @@ book:
         - name: "University of Minnesota"
           address: "1234 Main St, Minneapolis, MN 55455"
       orcid: "0000-0002-1825-0097"
-  date: "2/22/2024"
+  date: "3/28/2024"
   chapters:
     - index.qmd
     #- intro.qmd
@@ -49,8 +49,8 @@ format:
     lof: true
     lot: true
     fontfamily: times
-  #html: 
-  #  theme: cosmo
+  html: 
+    theme: cosmo
   docx:
     toc: true
 
