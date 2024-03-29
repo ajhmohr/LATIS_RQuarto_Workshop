@@ -11,6 +11,7 @@ f & = ma \\
 \end{align}
 ```
 We can also combine table styles. First, a \LaTeX table,
+
 ```{=tex}
 \begin{table}
 %\begin{table}[h!]
