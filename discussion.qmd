@@ -9,3 +9,26 @@ We can also add equations,
 f = ma
 \end{align}
 ```
+We can also combine table styles. First, a \LaTeX table,
+```{=tex}
+\begin{table}
+%\begin{table}[h!]
+    \centering
+    \caption{Our \LaTeX Table}
+    \begin{tabular}{c c c}
+        \hline
+        Date & Time & Word \\
+        \hline
+        3/23 & 1700 & Foo \\
+        3/24 & 0900 & Bar \\
+        \hline
+    \end{tabular}
+\end{table}
+```
+then a Markdown table,
+
+| Date | Time | Word |
+|:----:|:----:|:----:|
+| 3/23 | 1700 | Foo  |
+| 3/23 | 0900 | Bar  |
+: Our Markdown Table.
