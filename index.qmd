@@ -2,9 +2,9 @@
 
 # Introduction
 
-This is a book created from markdown and executable code.
+This is a book created from markdown [@rmarkdown] and executable code.
 
-See @knuth84 for additional discussion of literate programming.
+See @knuth84 for additional discussion of literate programming. <!--# Add discussion of other programming tools here -->
 
 Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut varius id est vel lacinia. Etiam fermentum lorem tellus, et cursus orci pharetra vel. Duis non viverra quam. Sed dignissim sem a mi ultricies dignissim. Nulla mattis lorem sit amet enim convallis porta. Duis dui ligula, ornare ut ex non, aliquet mattis libero. Ut congue ipsum cursus est euismod rutrum. Curabitur porttitor nibh sit amet urna ornare lobortis. Nullam commodo, enim sit amet feugiat volutpat, tortor est viverra leo, et auctor leo lorem eu purus. Pellentesque tempor diam at justo sollicitudin condimentum. Etiam eget sagittis sem. Vivamus nec vulputate arcu, et iaculis urna. Nam lacus velit, posuere sit amet facilisis in, mattis eleifend tellus.
 
@@ -13,4 +13,3 @@ Here is an example of a long quote:
 > Maecenas et eros dolor. Proin placerat dolor eu rutrum euismod. Sed eu pharetra eros. Suspendisse in erat a magna varius rutrum eu eget dolor. Sed efficitur, orci eu ultricies varius, libero dolor fermentum lectus, ac pulvinar magna urna eget leo. Praesent iaculis nisi magna, quis ultrices tellus pulvinar ac. Morbi vitae tortor efficitur, malesuada est nec, efficitur nunc. Nulla blandit elit mauris, ac suscipit erat dignissim quis. Nunc luctus quam et lorem ultricies, sit amet auctor mauris mattis. Maecenas varius nisl et eros eleifend, ac luctus odio tempus. Suspendisse vitae ligula vel ex maximus ultricies malesuada eget velit. Interdum et malesuada fames ac ante ipsum primis in faucibus. Lorem ipsum dolor sit amet, consectetur adipiscing elit.
 
 Cras sed elit at purus dictum faucibus. Suspendisse maximus euismod arcu sed auctor. Donec vitae ornare elit, volutpat ultricies erat. Praesent molestie vestibulum justo in semper. Maecenas dignissim egestas iaculis. Aenean tincidunt odio nisl, ac efficitur ante ultrices quis. Donec commodo varius enim, egestas accumsan metus.
-
