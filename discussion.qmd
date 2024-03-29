@@ -4,6 +4,8 @@ If you want to do LaTeX in line, like this, $10M_\odot$ use \$.
 
 We can also add equations,
 
+```{=tex}
 \begin{align}
 f = ma
 \end{align}
+```
