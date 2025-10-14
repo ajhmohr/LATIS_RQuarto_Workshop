@@ -1,5 +1,7 @@
 # LATIS RQuarto Workshop
-Examples of reproducible article or dissertation construction with R Quarto. Workshop presented in LATIS Workshop Series March 29, 2024.
+Examples of reproducible article or dissertation construction with R Quarto. 
+
+Workshop presented in LATIS Workshop Series March 29, 2024.
 
 
 # Acknowledgements
